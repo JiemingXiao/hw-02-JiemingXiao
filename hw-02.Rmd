@@ -10,24 +10,28 @@ output: github_document
 ```{r load-packages, message = FALSE}
 library(tidyverse)
 library(dsbox)
+library(ggplot2)
 ```
 
 ## Exercises
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+There are 13,245 rows in the dataset.
 
 ### Exercise 2
 
-Remove this text, and add your answer for Exercise 2 here.
+Each row represents a listing of properties.
+
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
+
 
 ```{r prices-neighbourhoods}
-# remove this comment and add the code for Exercise 3 here
+ggplot(data = edibnb, mapping = aes(x = price)) +
+  geom_histogram(binwidth = 500) +
+  facet_wrap(~neighbourhood)
 ```
 
 ### Exercise 4
