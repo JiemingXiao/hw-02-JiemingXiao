@@ -1,7 +1,7 @@
 ---
-title: "HW 01 - Airbnb listings in Edinburgh"
+title: "HW 02 - Airbnb listings in Edinburgh"
 author: "Jieming Xiao"
-date: "07/12/2022"
+date: "07/13/2022"
 output: github_document
 ---
 
@@ -50,8 +50,12 @@ Remove this text, and add your answer for Exercise 4 here.
 ```
 
 ```{r top-5-median-plot}
-
+edibnb %>%
+filter(neighbourhood %in% c("New Town", "Old Town", "Southside", "Stockbridge", "West End")) %>%
+ggplot(edibnb, mapping = aes(x = price, y = neighbourhood)) + 
+  geom_density_ridges(scale = 5)
 ```
+
 
 ```{r top-5-median-summary-stats}
 edibnb %>%
