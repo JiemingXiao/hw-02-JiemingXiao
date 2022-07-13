@@ -39,7 +39,8 @@ ggplot(data = edibnb, mapping = aes(x = price)) +
 Remove this text, and add your answer for Exercise 4 here.
 
 ```{r top-5-median}
-edibnb %>%
+  edibnb %>%
+  na.omit(edibnb) %>%
   group_by(neighbourhood) %>%
   summarise(median_price = median(price)) %>%
   top_n(n = 5, median_price)
@@ -51,12 +52,14 @@ edibnb %>%
 
 ```{r top-5-median-summary-stats}
 edibnb %>%
+  na.omit(edibnb) %>%
   group_by(neighbourhood) %>%
   summarise(min_price = min(price),
     mean_price = mean(price),
     median_price = median(price),
     max_price = max(price),
-    sd_price = sd(price)
+    sd_price = sd(price),
+    IQR_price = IQR(price)
   )
 
 ```
