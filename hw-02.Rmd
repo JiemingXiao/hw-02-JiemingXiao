@@ -11,6 +11,9 @@ output: github_document
 library(tidyverse)
 library(dsbox)
 library(ggplot2)
+library(ggridges)
+library(magrittr)
+library(dplyr)
 ```
 
 ## Exercises
@@ -47,7 +50,7 @@ Remove this text, and add your answer for Exercise 4 here.
 ```
 
 ```{r top-5-median-plot}
-# remove this comment and add the code for Exercise 4 here
+
 ```
 
 ```{r top-5-median-summary-stats}
